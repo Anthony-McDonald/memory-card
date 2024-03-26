@@ -1,0 +1,10 @@
+.score-box {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-element {
+    margin: 0.5rem;
+}
