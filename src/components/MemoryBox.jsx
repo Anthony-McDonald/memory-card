@@ -3,7 +3,7 @@ import "../styles/MemoryBox.css";
 export default function MemoryBox({imageName, handleClick}) {
 
 
-    const srcLine = "src/assets/poke-imgs/" + imageName + ".png";
+    const srcLine = "/poke-imgs/" + imageName + ".png";
     return (
         <>
         <div className="memory-box" role="button" tabIndex={0} onClick={() => {
