@@ -29,11 +29,11 @@ export default function App() {
     <>
     <div className="main-holder">
     <div className="header">
-      <img className="poke-logo" src="src/assets/poke-logo.webp" alt="pokeball" />
+      <img className="poke-logo" src="/poke-logo.webp" alt="pokeball" />
       <h1 className="title creepster-regular">Ghostly Memorisation</h1>
       <div className="header-right">
       <ScoreDisplayer score={score} bestScore={bestScore}></ScoreDisplayer>
-      <img className="poke-logo" src="src/assets/poke-logo.webp" alt="pokeball" />
+      <img className="poke-logo" src="/poke-logo.webp" alt="pokeball" />
       </div>
 
     </div>
