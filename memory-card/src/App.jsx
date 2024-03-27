@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import ScoreDisplayer from './components/ScoreDisplayer'
 import MemoryBox from './components/MemoryBox'
+import MemoryBoxSelector from './components/MemoryBoxSelector'
 
 function App() {
   // const [count, setCount] = useState(0)
+
 
   return (
     <>
@@ -18,12 +20,10 @@ function App() {
 
     </div>
     <div className="main-area">
-      <MemoryBox></MemoryBox>
-      mainareadiv
+      <MemoryBoxSelector></MemoryBoxSelector>
     </div>
 
     </div>
-
     </>
   )
 }
