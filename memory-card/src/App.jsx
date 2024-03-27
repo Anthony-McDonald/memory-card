@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ScoreDisplayer from './components/ScoreDisplayer'
+import MemoryBox from './components/MemoryBox'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
 
     </div>
     <div className="main-area">
+      <MemoryBox></MemoryBox>
       mainareadiv
     </div>
 
