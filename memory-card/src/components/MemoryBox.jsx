@@ -1,11 +1,14 @@
 import "../styles/MemoryBox.css";
 
-export default function MemoryBox({imageName}) {
+export default function MemoryBox({imageName, handleClick}) {
+
+
     const srcLine = "src/assets/poke-imgs/" + imageName + ".png";
-    console.log(srcLine)
     return (
         <>
-        <div className="memory-box">
+        <div className="memory-box" role="button" tabIndex={0} onClick={() => {
+            handleClick(imageName);
+        }}>
             <div className="img-holder">
                 <img className="mem-img" src={srcLine} alt="pokeImg" />
                 <div className="poke-name rubik-scribble-regular">{imageName}</div>
@@ -14,3 +17,4 @@ export default function MemoryBox({imageName}) {
         </>
     )
 }
+

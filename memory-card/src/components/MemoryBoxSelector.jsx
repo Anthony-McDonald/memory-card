@@ -1,19 +1,20 @@
 import MemoryBox from "./MemoryBox";
 import "../styles/MemoryBox.css";
 
-export default function MemoryBoxSelector() {
+export default function MemoryBoxSelector({handleClick}) {
+
 
     const pokeNames = ['chandelure', 'cofagrigus', 'dusknoir',
     'gastly', 'gengar', 'giratina', 'haunter', 'litwick', 'mismagius',
     'polteageist', 'pumpkaboo', 'zoroark']
 
     shuffle(pokeNames);
-    console.log(pokeNames);
+
 
     const divs = [];
 
     for (let i = 0; i < pokeNames.length; i++) {
-        divs.push(<div key={i}> <MemoryBox imageName={pokeNames[i]}></MemoryBox></div>)
+        divs.push(<div key={i}> <MemoryBox imageName={pokeNames[i]} handleClick={handleClick}></MemoryBox></div>)
     }
 
     return (

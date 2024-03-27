@@ -1,11 +1,29 @@
 import { useState } from 'react'
 import ScoreDisplayer from './components/ScoreDisplayer'
-import MemoryBox from './components/MemoryBox'
 import MemoryBoxSelector from './components/MemoryBoxSelector'
 
-function App() {
-  // const [count, setCount] = useState(0)
+export default function App() {
+  const [clickedDivs, setClickedDivs] = useState([]);
+  const [bestScore, setBestScore] = useState(0);
+  const [score, setScore] = useState(0);
+  console.log(clickedDivs);
 
+  const handleClickedDiv = (divClicked) => {
+    let newDivsClicked = clickedDivs;
+    newDivsClicked.push(divClicked);
+
+    if (checkIfDuplicatePresent(newDivsClicked)) {
+      if (bestScore < newDivsClicked.length - 1) {
+        setBestScore(newDivsClicked.length - 1);
+      }
+      newDivsClicked = [];
+      setScore(0);
+    } else {
+      setScore(score + 1);
+    }
+    setClickedDivs(newDivsClicked);
+
+  }
 
   return (
     <>
@@ -14,13 +32,13 @@ function App() {
       <img className="poke-logo" src="src/assets/poke-logo.webp" alt="pokeball" />
       <h1 className="title creepster-regular">Ghostly Memorisation</h1>
       <div className="header-right">
-      <ScoreDisplayer></ScoreDisplayer>
+      <ScoreDisplayer score={score} bestScore={bestScore}></ScoreDisplayer>
       <img className="poke-logo" src="src/assets/poke-logo.webp" alt="pokeball" />
       </div>
 
     </div>
     <div className="main-area">
-      <MemoryBoxSelector></MemoryBoxSelector>
+      <MemoryBoxSelector handleClick={handleClickedDiv} ></MemoryBoxSelector>
     </div>
 
     </div>
@@ -28,4 +46,6 @@ function App() {
   )
 }
 
-export default App
+function checkIfDuplicatePresent(arr) {
+  return new Set(arr).size !== arr.length;
+}
